@@ -1,0 +1,11 @@
+---
+- hosts: all
+  serial: 5
+  gather_facts: false
+
+  tasks:
+    - name: reboot linux instance
+      reboot:
+        reboot_timeout: "600"
+      become: yes
+      ignore_errors: true

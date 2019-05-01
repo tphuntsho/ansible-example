@@ -1,0 +1,5 @@
+
+- name: reboot windows instance
+  win_reboot:
+    reboot_timeout: "{{ reboot_timeout }}"
+  

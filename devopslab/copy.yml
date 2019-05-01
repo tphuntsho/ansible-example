@@ -1,0 +1,11 @@
+- hosts: all
+  serial: 1
+  gather_facts: false
+
+  tasks:
+  - name: copy image
+    copy:
+      src: /tmp/wordpress.tar
+      dest: /tmp/wordpress.tar
+    become: yes
+    ignore_errors: true

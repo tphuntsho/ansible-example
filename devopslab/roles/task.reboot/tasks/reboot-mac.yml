@@ -1,0 +1,7 @@
+
+- name: make sure jenkins is the auto login
+  command: "sudo defaults write /Library/Preferences/com.apple.loginwindow 'autoLoginUser' 'jenkins'"
+
+- name: reboot mac instance
+  reboot:
+    reboot_timeout: "{{ reboot_timeout }}"

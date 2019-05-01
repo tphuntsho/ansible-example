@@ -1,0 +1,5 @@
+
+- name: reboot linux instance
+  reboot:
+    reboot_timeout: "{{ reboot_timeout }}"
+  

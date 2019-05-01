@@ -1,0 +1,30 @@
+---
+  
+- name: reboot mac os instance
+  include: reboot-mac.yml
+  tags:
+    - reboot
+  
+  become: yes
+  when: ansible_os_family == "Darwin"
+  
+- name: reboot windows instance
+  include: reboot-windows.yml
+  tags:
+    - reboot
+  
+  vars:
+    ansible_become_password: "{{ ansible_password }}"
+  become_method: runas
+  become: yes
+  become_user: "{{ ansible_user }}"
+
+  when: ansible_os_family == "Windows"
+
+- name: reboot linux instance
+  include: reboot-linux.yml
+  tags:
+    - reboot
+  
+  become: yes
+  when: ansible_os_family == "RedHat"
