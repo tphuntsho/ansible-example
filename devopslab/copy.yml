@@ -3,9 +3,9 @@
   gather_facts: false
 
   tasks:
-  - name: copy image
+  - name: copy file
     copy:
-      src: /tmp/wordpress.tar
-      dest: /tmp/wordpress.tar
+      src: /tmp/myfile.txt
+      dest: /tmp/myfile.txt
     become: yes
     ignore_errors: true
